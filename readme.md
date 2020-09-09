@@ -13,12 +13,12 @@ rm -rf .git
 git init
 docker run --rm -v $PWD:/app composer create-project statamic/statamic statamic --prefer-dist --stability=dev
 
-# Run project
-docker-compose up
-
 # Create first user
 docker run --rm -it -v $PWD:/app composer php statamic/please make:user
 
+# Run project and point browser to http://localhost:8000
+docker-compose up
+open http://localhost:8000 
 ```
 
 ## Updating Statamic
