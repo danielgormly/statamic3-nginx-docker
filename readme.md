@@ -11,8 +11,6 @@ cd my-project
 # clear this repo and create a fresh statamic project
 rm -rf .git
 git init
-
-# Create a new statamic project
 docker run --rm -v $PWD:/app composer create-project statamic/statamic statamic --prefer-dist --stability=dev
 
 # Run project
