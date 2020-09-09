@@ -8,10 +8,9 @@ services:
     ports:
       - "8000:8000"
   fpm:
-    image: php:7.4-fpm
-    # build:
-      # context: ./
-      # dockerfile: fpm.Dockerfile
+    build:
+      context: ./php-fpm
+      dockerfile: ./Dockerfile
     volumes:
       - './statamic:/var/www/statamic'
-      - './php.ini /usr/local/etc/php/'
+      - './php.ini:/usr/local/etc/php/php.ini'
