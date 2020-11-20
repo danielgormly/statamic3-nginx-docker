@@ -1,5 +1,8 @@
 FROM php:7.4-fpm
 
+# passing user to PHP-FPM
+RUN apk add shadow && usermod -u 1000 www-data && groupmod -g 1000 www-data
+
 # Install dependencies as per server requirements
 # https://statamic.dev/requirements#server-requirements
 # View default extensions with: docker run --rm php:7.4-fpm php -m
